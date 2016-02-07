@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.account', ['ngRoute'])
+angular.module('myApp.account', ['ngRoute', 'angularFileUpload'])
 
 .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/account', {
@@ -21,7 +21,7 @@ angular.module('myApp.account', ['ngRoute'])
 
 
 
-.controller('AccountCtrl', ['$rootScope', '$scope', 'Auth', 'furl', '$location', 'profile', 'auth', 'Users', function($rootScope, $scope, Auth, furl, $location, profile, auth, Users) {
+.controller('AccountCtrl', ['$rootScope', '$scope', 'Auth', 'furl', '$location', 'profile', 'auth', 'Users', 'FileUploader', function($rootScope, $scope, Auth, furl, $location, profile, auth, Users, FileUploader) {
 
     $scope.profile = profile;
     $scope.users = Users.all;
@@ -39,4 +39,7 @@ angular.module('myApp.account', ['ngRoute'])
     };
 
 
-}]);
+    }]);
+    
+
+
